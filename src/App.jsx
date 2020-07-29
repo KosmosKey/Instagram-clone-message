@@ -1,13 +1,5 @@
-import React, { useState, useEffect, forwardRef } from "react";
-import {
-  Container,
-  FormControl,
-  Input,
-  InputLabel,
-  FormHelperText,
-  TextField,
-  IconButton,
-} from "@material-ui/core";
+import React, { useState, useEffect } from "react";
+import { Container, FormControl, IconButton } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import "./styelsheet.scss";
 import Navbar from "./Navbar";
@@ -15,10 +7,14 @@ import Messages from "./Messages";
 import firebase from "firebase";
 import db from "./firebase";
 import FlipMove from "react-flip-move";
+import { ModalOpen } from "./ModalOpen";
 
 const App = () => {
   const [username, setUsername] = useState("");
   const [input, setInput] = useState("");
+  const [inputModal, setInputModal] = useState("");
+  const [show, setShow] = useState(false);
+
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -32,8 +28,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const prop = prompt("Enter your username");
-    setUsername(prop);
+    setShow(true);
   }, []);
 
   const onSubmitMessage = (e) => {
@@ -47,10 +42,26 @@ const App = () => {
     setInput("");
   };
 
+  const submitNameForm = () => {
+    setUsername(inputModal);
+    setShow(false);
+  };
+
   return (
     <div>
+        {show ? (
+          <ModalOpen
+            inputValue={inputModal}
+            onchangeInput={(e) => setInputModal(e.target.value)}
+            submitForm={submitNameForm}
+          />
+        ) : (
+          ""
+        )}
+
       <Container>
         <Navbar username={username} />
+
         <form onSubmit={onSubmitMessage}>
           <FormControl className="App__FormSubmit">
             <input
