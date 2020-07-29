@@ -1,43 +1,112 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:wght');
+@import url("https://fonts.googleapis.com/css?family=Nunito:wght");
 
 * {
-    text-align: center !important;
-    font-family: 'Nunito', sans-serif;
-    padding: 0;
-    margin: 0;
+  text-align: center !important;
+  font-family: "Nunito", sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 .Navbar__NavigationBar {
-    margin-top: 50px;
-    background: white !important;
+  margin-top: 50px;
+  background: white !important;
 
-    h1 {
-        font-size: 35px;
-        letter-spacing: 1px;
-    }
+  h1 {
+    font-size: 35px;
+    letter-spacing: 1px;
+  }
 
-    p {
-        color: #a7a7a7;
-        font-size: 20px;
-        margin-top: 5px;
-        letter-spacing: 1px;
-        font-weight: bold;
-    }
+  p {
+    color: #a7a7a7;
+    font-size: 20px;
+    margin-top: 5px;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
 }
 
 .Navbar__NavHeader {
-    padding: 10px;
-    background: white !important;
-    color: black !important;
-    font-weight: lighter;
-
+  padding: 10px;
+  background: white !important;
+  color: black !important;
+  font-weight: lighter;
 }
 
 img {
-    padding-right: 20px;
-    margin-bottom: 10px;
+  padding-right: 20px;
+  margin-bottom: 10px;
 }
 
 .Navbar__instagraImage {
-    border-radius: 50px;
+  border-radius: 50px;
+}
+
+.message__card {
+  max-width: 300px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.message_guestCard {
+  background: #ffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.205);
+}
+
+.message__cardUser {
+  padding: 0px 10px;
+  border-radius: 50px !important;
+
+  h1 {
+    font-size: 20px !important;
+  }
+}
+
+.message_userCard {
+  background: #e9e9e9 !important;
+  box-shadow: none !important;
+}
+
+.message_user {
+  margin-left: auto;
+}
+
+form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  input {
+    border-radius: 50px !important;
+    position: relative;
+    padding: 15px;
+    padding-right: 50px;
+    border: 1px solid rgba(58, 58, 58, 0.425);
+    text-align: left !important;
+    font-weight: 800;
+    font-size: 18px;
+  }
+
+
+  .Message__IconButton {
+    position: absolute;
+    right: 50px;
+    margin-top: 2px;
+  }
+
+  input:focus {
+    outline: none !important;
+  }
+
+  .App__FormSubmit {
+    background: white;
+    display: flex !important;
+    flex-direction: row !important;
+    padding: 30px 50px;
+
+    .App__InputField {
+      flex: 1;
+    }
+  }
 }

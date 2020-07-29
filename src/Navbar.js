@@ -1,6 +1,6 @@
 import React from "react";
 
-function Navbar() {
+function Navbar({ username }) {
   return (
     <div className="Navbar__NavigationBar">
       <img
@@ -9,7 +9,7 @@ function Navbar() {
       />
       <div className="Navbar__title">
         <h1>Instagram Messenger Application</h1>
-        <p>Welcome Qazi</p>
+        <p>Welcome {username || "Unknown User"} </p>
       </div>
     </div>
   );
